@@ -98,7 +98,7 @@ class AmysqlProcess {
 			Amysql::AmysqlNotice($this -> ActionName . ' 方法不存在'));
 
 		$this -> AmysqlController = new $this->ControllerName($_GET);	// 实例控制器
-		if(in_array('init', $methods, true)) $this -> AmysqlController -> init();//调用初始化方法
+		if(in_array('_init', $methods, true)) $this -> AmysqlController -> _init();//调用初始化方法
 		$this -> AmysqlController -> {$this -> ActionName}();			// 执行方法
 	}
 
